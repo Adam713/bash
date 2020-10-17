@@ -1,4 +1,6 @@
 #!/bin/bash
+#echo I ❤ Adam_ALwan | lolcat -a -d 500
+figlet I ❤ Adam_ALwan | lolcat
 echo -e "1)Update System "
 echo -e "2)Check Program nedd Upgrade "
 echo -e "3)Upgrade  Program "
@@ -36,7 +38,7 @@ read -p "please Enter Yor Option > " tryag
 elif [[ $tryag -eq '6' ]]; then
 echo -e "Whait...!"
 sleep 2
-exit 0
+exit
 echo -e "Bye...!"
 else
 echo "Wrong Options..!"

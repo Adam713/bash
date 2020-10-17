@@ -11,14 +11,14 @@ read -p "please Enter Yor Option > " adam
 if [[ $adam -eq '1' ]]; then
 echo -e "Whait...!"
 sleep 2
-sudo ifconfig wlan1 up 192.168.1.1 netmask 255.255.255.0
+sudo ifconfig wlan1mon up 192.168.1.1 netmask 255.255.255.0
 sudo route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.1.1
 read -p "please Enter Yor Option > " adam
 elif [[ $adam -eq '2' ]]; then
 echo -e "Whait...!"
 sleep 2
 sudo iptables --table nat --append POSTROUTING --out-interface eth0 -j MASQUERADE
-sudo iptables --append FORWARD --in-interface wlan1 -j ACCEPT
+sudo iptables --append FORWARD --in-interface wlan1mon -j ACCEPT
 read -p "please Enter Yor Option > " adam
 elif [[ $adam -eq '3' ]]; then
 echo -e "Whait...!"
