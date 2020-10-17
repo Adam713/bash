@@ -28,7 +28,7 @@ read -p "please Enter Yor Option > " adam
 elif [[ $adam -eq '4' ]]; then
 echo -e "Whait...!"
 sleep 2
-clear
+exit
 echo -e "Bye...!"
 else
 echo "Wrong Options..!"
