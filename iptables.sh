@@ -1,6 +1,10 @@
 #!/bin/bash
-
-echo -e "1)ifconfig wlan1"
+figlet I ❤ Adam_ALwan | lolcat
+BGreen='\033[1;32m'
+Yellow='\033[0;33m'
+BBlue='\033[1;34m'
+NC='\033[0m' # No Color
+echo -e ${BGreen}"1)ifconfig wlan1"${Yellow}
 echo -e "2)iptables "
 echo -e "3)ip_forward "
 echo -e "4)clear "
