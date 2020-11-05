@@ -2,12 +2,12 @@
 #echo I ❤ Adam_ALwan | lolcat -a -d 500
 figlet I ❤ Adam_ALwan | lolcat
 echo -e "1) airmon-n " #ifconfig wlan1 down + iwconfig wlan1 mode monitor + ifconfig wlan1 up
+echo -e "6) airmon-n start "
 echo -e "2)START Monitor mode"
 echo -e "3)Run Hostapd "
 echo -e "4)Run dnsmasq "
 echo -e "5)Clear "
 echo -e "0)Exit "
-
 while true; do
 read -p "please Enter Yor Option > " tryag
 if [[ $tryag -eq '1' ]]; then
@@ -20,25 +20,31 @@ sudo airmon-ng
 read -p "please Enter Yor Option > " tryag
 elif [[ $tryag -eq '2' ]]; then
 echo -e "Whait...!"
-sleep 2
+sleep 1
 sudo airmon-ng start wlan1
 read -p "please Enter Yor Option > " tryag
 elif [[ $tryag -eq '3' ]]; then
 echo -e "Whait...!"
-sleep 2
+sleep 1
 sudo xterm -e hostapd hostapd.conf
 read -p "please Enter Yor Option > " tryag
 elif [[ $tryag -eq '4' ]]; then
 echo -e "Whait...!"
-sleep 2
+sleep 1
 sudo xterm dnsmasq -C dnsmasq.conf -d
 read -p "please Enter Yor Option > " tryag
 elif [[ $tryag -eq '5' ]]; then
 echo -e "Whait...!"
-sleep 2
+sleep 1
 clear
 read -p "please Enter Yor Option > " tryag
 elif [[ $tryag -eq '6' ]]; then
+echo -e "Whait...!"
+sleep 0
+read -p "Enter Intrface :# " i
+sudo airmon-ng start $i
+read -p "please Enter Yor Option > " tryag
+elif [[ $tryag -eq '0' ]]; then
 echo -e "Whait...!"
 sleep 2
 exit
