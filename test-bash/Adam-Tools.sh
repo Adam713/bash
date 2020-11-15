@@ -1,7 +1,8 @@
 #!/bin/bash
 #echo I ❤ Adam_ALwan | lolcat -a -d 500
 figlet I ❤ Adam_ALwan | lolcat
-echo -e "1) airmon-n " #ifconfig wlan1 down + iwconfig wlan1 mode monitor + ifconfig wlan1 up
+printf '\033]2;INSTALLER\a'#
+echo -e "1)\e[1;33m airmon-ng\e[0m" # airmon-n " #ifconfig wlan1 down + iwconfig wlan1 mode monitor + ifconfig wlan1 up
 echo -e "2)START Monitor mode"
 echo -e "3)Run Hostapd "
 echo -e "4)Run dnsmasq "

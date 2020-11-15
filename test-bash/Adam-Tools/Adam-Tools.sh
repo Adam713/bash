@@ -1,8 +1,19 @@
 #!/bin/bash
 #echo I ❤ Adam_ALwan | lolcat -a -d 500
+#figlet I ❤ Adam_ALwan | lolcat
+clear
+printf '\033]2;INSTALLER\a'
+echo -e "Press \e[1;33m any key\e[0m to install the script..."
+read -n 1
+clear
+apt-get -y install gnome-terminal
+clear
+#apt autoremove gnome-terminal
 figlet I ❤ Adam_ALwan | lolcat
-echo -e "1)airmon-n " #ifconfig wlan1 down + iwconfig wlan1 mode monitor + ifconfig wlan1 up
-echo -e "2)START Monitor mode"
+
+printf '\033]2;INSTALLER\a'
+echo -e "1)\e[1;33m airmon-ng\e[0m "
+echo -e "2)\e[1;33m START Monitor mode\e[0m "
 echo -e "3) aireplay-ng network "
 echo -e "4) aireplay-ng mac Target "
 echo -e "5)airodump "
@@ -61,8 +72,8 @@ sudo xterm -e airodump-ng $i
 read -p "please Enter Yor Option > " tryag
 elif [[ $tryag -eq '6' ]]; then
 echo -e "Whait...!"
-sleep 0
-sudo xterm -e hostapd /home/kali/Desktop/script/bash/test-bash/Adam-Tools/hostapd.conf
+sleep 6
+sudo xterm -e hostapd /home/kali/Desktop/bash/test-bash/Adam-Tools/hostapd.conf
 
 #read -p "please Enter Yor Option > " tryag
 elif [[ $tryag -eq '7' ]]; then
@@ -70,7 +81,7 @@ echo -e "Whait...!"
 sleep 1
 clear
 
-read -p "please Enter Yor Option > " tryag
+read -p "please Enter Yor Option > " tryag 
 elif [[ $tryag -eq '0' ]]; then
 echo -e "Whait...!"
 sleep 2
