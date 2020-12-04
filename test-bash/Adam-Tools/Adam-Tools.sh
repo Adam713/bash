@@ -93,9 +93,9 @@ read -p "please Enter Yor Option > " tryag
 elif [[ $tryag -eq '7' ]]; then
 echo -e "Whait...!"
 rm -rf mac-list.txt
-touch mac-list.txt
+sudo touch mac-list.txt
 read -p "Enter bssid :# " text
-echo $text >> mac-list.txt
+sudo echo $text >> mac-list.txt
 read -p "Enter Intrface :# " i
 read -p "Enter number channel :# " c
 sudo xterm -e mdk3 $i d -b mac-list.txt -c $c
